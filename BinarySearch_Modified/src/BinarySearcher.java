@@ -1,6 +1,8 @@
 /**
  A class for executing binary searches in an array.
  */
+
+// lets see if this works
 public class BinarySearcher {
     /**
      Finds a value in a range of a sorted array, using the binary
