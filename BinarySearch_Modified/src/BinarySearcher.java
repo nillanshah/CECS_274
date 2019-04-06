@@ -18,6 +18,8 @@ public class BinarySearcher {
         int mid = (low + high) / 2;
         int[] range = new int[2];
 
+        System.out.println("\nsearchLeft mid: " + mid);
+
         if (low <= high) {
             if ((mid == 0 || a[mid - 1] < value) && a[mid] == value){
                 range[0] = mid;
@@ -29,7 +31,12 @@ public class BinarySearcher {
             }
         } else {
             range[0] = -1;
-            range[1] = mid + 1;
+
+            if (mid == 0){
+                range[1] = 0;
+            } else {
+                range[1] = mid + 1;
+            }
             return range;
         }
     }
@@ -37,7 +44,7 @@ public class BinarySearcher {
     public static int[] searchRight(int[] a, int low, int high, int value) {
         int mid = (low + high) / 2;
         int[] range = new int[2];
-
+        System.out.println("\nsearchRight mid: " + mid);
         if (low <= high) {
             if ((mid == a.length - 1 || a[mid + 1] > value) && a[mid] == value){
                 range[1] = mid;
@@ -50,7 +57,12 @@ public class BinarySearcher {
             }
         } else {
             range[0] = -1;
-            range[1] = mid + 1;
+
+            if (mid == 0){
+                range[1] = 0;
+            } else {
+                range[1] = mid + 1;
+            }
             return range;
         }
     }
