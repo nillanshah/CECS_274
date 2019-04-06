@@ -29,7 +29,7 @@ public class BinarySearcher {
             }
         } else {
             range[0] = -1;
-            range[1] = mid;
+            range[1] = mid + 1;
             return range;
         }
     }
@@ -50,7 +50,7 @@ public class BinarySearcher {
             }
         } else {
             range[0] = -1;
-            range[1] = mid;
+            range[1] = mid + 1;
             return range;
         }
     }
@@ -58,6 +58,8 @@ public class BinarySearcher {
     public static int[] firstAndLast(int[] a, int low, int high, int value){
         int[] foundLeft = BinarySearcher.searchLeft(a, low, high, value);
         int[] foundRight = BinarySearcher.searchRight(a, low, high, value);
+
+        int[] foundRange = new int [2];
 
         if (foundLeft[0] != -1) {
             foundLeft[1] = foundRight[1];
